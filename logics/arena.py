@@ -3,15 +3,18 @@ from mage import Mage
 from logics import *
 
 def fight(barbarian, mage):
-    getstatus(barbarian, mage)
+    console_log = ''
+    console_log += getstatus(barbarian, mage) + '\n'
 
     while True:
-        one_round(barbarian, mage)
-        get_hp(barbarian, mage)
+        console_log += one_round(barbarian, mage) + '\n'
+        console_log += get_hp(barbarian, mage) + '\n'
 
         if barbarian.health_point <= 0:
-            print("Ladies and Gentlemen! %s has fallen. Our winnter is: %s" % (barbarian.name, str(mage.name).upper()))
+            console_log += "Ladies and Gentlemen! %s has fallen. Our winnter is: %s" % (barbarian.name, str(mage.name).upper())
             break
         elif mage.health_point <= 0:
-            print("Ladies and Gentlemen! %s has fallen. Our winnter is: %s" % (mage.name, str(barbarian.name).upper()))
+            console_log += "Ladies and Gentlemen! %s has fallen. Our winnter is: %s" % (mage.name, str(barbarian.name).upper())
             break
+
+    return console_log

@@ -4,7 +4,6 @@ from logics.mage import Mage
 from logics.arena import *
 
 # Hard coded DB
-
 list_of_characters = []
 
 app = Flask(__name__)
@@ -30,8 +29,11 @@ def create_characters():
 def arena():
     barb_char = list_of_characters[0]
     mage_char = list_of_characters[1]
+    console_log = fight(barbarian=barb_char, mage=mage_char)
+    for character in list_of_characters:
+        list_of_characters.remove(character)
 
-    return render_template('arena.html', barbarian = barb_char, mage = mage_char)
+    return render_template('arena.html', console_log=console_log)
 
 
 if __name__ == '__main__':
