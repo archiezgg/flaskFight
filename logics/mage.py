@@ -3,13 +3,17 @@ from dice import *
 
 class Mage(object):
     name = ''
-    intelligence = roll_d10()
-    stamina = roll_d10()
-    health_point = roll_custom(51) + 50 + stamina
-    base_damage = roll_d10() + intelligence
+    intelligence = 0
+    stamina = 0
+    health_point = 0
+    base_damage = 0
 
     def __init__(self, name):
         self.name = name
+        self.intelligence = roll_d10()
+        self.stamina = roll_d10()
+        self.health_point = roll_custom(51) + 50 + self.stamina
+        self.base_damage = roll_d10() + self.intelligence
 
     def eat_fire(self):
         self.health_point += self.stamina
