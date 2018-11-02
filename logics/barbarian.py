@@ -4,13 +4,17 @@ from weapon import Weapon
 
 class Barbarian(object):
     name = ''
-    strength = roll_d10()
-    stamina = roll_d10()
-    health_point = roll_custom(51) + 50 + stamina
-    base_damage = roll_d10() + strength
+    strength = 0
+    stamina = 0
+    health_point = 0
+    base_damage = 0
 
     def __init__(self, name):
         self.name = name
+        self.strength = roll_d10()
+        self.stamina = roll_d10()
+        self.health_point = roll_custom(51) + 50 + self.stamina
+        self.base_damage = roll_d10() + self.strength
 
     def battle_cry(self):
         heal = roll_d10() + self.stamina

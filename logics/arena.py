@@ -3,8 +3,6 @@ from mage import Mage
 from logics import *
 
 def arena():
-    barbarian = Barbarian("Konan")
-    mage = Mage("Borne")
     getstatus(barbarian, mage)
 
     while True:
@@ -17,7 +15,3 @@ def arena():
         elif mage.health_point <= 0:
             print("Ladies and Gentlemen! %s has fallen. Our winnter is: %s" % (mage.name, str(barbarian.name).upper()))
             break
-
-
-if __name__ == '__main__':
-    arena()
