@@ -2,7 +2,7 @@ from barbarian import Barbarian
 from mage import Mage
 from logics import *
 
-def arena():
+def fight(barbarian, mage):
     getstatus(barbarian, mage)
 
     while True:
