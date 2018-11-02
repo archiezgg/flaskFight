@@ -1,7 +1,12 @@
 {% extends 'layout.html' %}
 
 {% block body %}
-<div class="container">
-  <h1>Welcome to Archie's first flaskFight application!</h1>
+  <h1>Welcome to flaskFight!</h1>
+  <form method="post" action="/create">
+    <label>Give a name for the barbarian!</label><br>
+    <input name="barbarian_name" placeholder="the mighty barbarian"><br>
+    <label>Give a name for the mage!</label><br>
+    <input name="mage_name" placeholder="the destructive mage"><br>
+    <button class="btn btn-success">Enter the arena!</button>
+  </form>
 {% endblock %}
-</div>
