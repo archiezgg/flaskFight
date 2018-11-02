@@ -18,7 +18,7 @@ def create_characters():
         barb_char = Barbarian(barbarian_name)
         mage_char = Mage(mage_name)
 
-    return render_template('characters.html', barbarian = barb_char)
+    return render_template('characters.html', barbarian = barb_char, mage = mage_char)
 
 
 if __name__ == '__main__':

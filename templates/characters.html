@@ -1,5 +1,37 @@
 {% extends 'layout.html' %}
 
 {% block body %}
-  <h1>Hello {{barbarian.name}}</h1>
+  <h1>Characters</h1>
+  <h2>Alright, so here are the fighting characters:</h2>
+  <table class="table table-striped table-bordered table-condensed">
+    <thead>
+      <th>Name</th>
+      <th>Class</th>
+      <th>Strength / Intelligence</th>
+      <th>Stamina</th>
+      <th>HP</th>
+      <th>Base damage</th>
+    </thead>
+    <tbody>
+        <tr>
+          <td>{{barbarian.name}}</td>
+          <td>Barbarian</td>
+          <td>{{barbarian.strength}}</td>
+          <td>{{barbarian.stamina}}</td>
+          <td>{{barbarian.health_point}}</td>
+          <td>{{barbarian.base_damage}}</td>
+        </tr>
+        <tr>
+          <td>{{mage.name}}</td>
+          <td>Mage</td>
+          <td>{{mage.intelligence}}</td>
+          <td>{{mage.stamina}}</td>
+          <td>{{mage.health_point}}</td>
+          <td>{{mage.base_damage}}</td>
+        </tr>
+    </tbody>
+  </table>
+  <form action="/arena" method="get">
+    <button type="button" class="btn btn-danger">FIGHT!</button>
+  </form>
 {% endblock %}
