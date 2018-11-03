@@ -1,9 +1,13 @@
 {% extends 'layout.html' %}
 
 {% block body %}
-  <h1>Welcome to the Arena!!!!!</h1>
-  <p>{{console_log}}</p>
+  <h1>Welcome to the Arena!</h1>
+  <ul>
+    {% for sentence in part_of_log %}
+    <li>{{sentence}}</li>
+    {% endfor %}
+  </ul>
   <form action="/" method="get">
-    <button type="submit">Back to main menu</button>
+    <button type="submit" class="btn btn-primary">Back to main menu</button>
   </form>
 {% endblock %}
