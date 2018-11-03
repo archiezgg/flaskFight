@@ -1,6 +1,6 @@
-from barbarian import Barbarian
-from mage import Mage
-from logics import *
+from logics.barbarian import Barbarian
+from logics.mage import Mage
+from logics.logics import *
 
 def fight(barbarian, mage):
     console_log = ''

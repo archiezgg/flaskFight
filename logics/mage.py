@@ -1,4 +1,4 @@
-from dice import *
+from logics.dice import *
 
 
 class Mage(object):

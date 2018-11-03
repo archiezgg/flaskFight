@@ -30,8 +30,7 @@ def arena():
     barb_char = list_of_characters[0]
     mage_char = list_of_characters[1]
     console_log = fight(barbarian=barb_char, mage=mage_char)
-    for character in list_of_characters:
-        list_of_characters.remove(character)
+    list_of_characters.clear()
 
     return render_template('arena.html', console_log=console_log)
 

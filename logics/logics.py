@@ -1,4 +1,4 @@
-from dice import *
+from logics.dice import *
 
 
 def getstatus(barbarian, mage):

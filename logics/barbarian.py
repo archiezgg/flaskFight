@@ -1,5 +1,5 @@
-from dice import *
-from weapon import Weapon
+from logics.dice import *
+from logics.weapon import Weapon
 
 
 class Barbarian(object):
