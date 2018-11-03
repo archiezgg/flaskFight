@@ -11,7 +11,10 @@ def fight(barbarian, mage):
         console_log += get_hp(barbarian, mage)
 
         if barbarian.health_point <= 0:
-            console_log += "Ladies and Gentlemen! %s has fallen. Our winnter is: %s ;" % (barbarian.name, str(mage.name).upper())
+            if mage.health_point <= 0:
+                console_log += "Ladies and Gentlemen! Both %s and %s has fallen. It's a TIE! ;" % (barbarian.name, mage.name)
+            else:
+                console_log += "Ladies and Gentlemen! %s has fallen. Our winnter is: %s ;" % (barbarian.name, str(mage.name).upper())
             break
         elif mage.health_point <= 0:
             console_log += "Ladies and Gentlemen! %s has fallen. Our winnter is: %s ;" % (mage.name, str(barbarian.name).upper())

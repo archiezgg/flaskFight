@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 from logics.barbarian import Barbarian
 from logics.mage import Mage
 from logics.arena import *
@@ -10,6 +10,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
+    if len(list_of_characters) > 0:
+        list_of_characters.clear()
+
     return render_template('index.html')
 
 @app.route('/characters', methods =('GET', 'POST'))
@@ -27,6 +30,10 @@ def create_characters():
 
 @app.route('/arena')
 def arena():
+
+    if len(list_of_characters) == 0:
+        return redirect('/')
+
     barb_char = list_of_characters[0]
     mage_char = list_of_characters[1]
 
