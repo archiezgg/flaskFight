@@ -3,11 +3,11 @@ from logics.weapon import Weapon
 
 
 class Barbarian(object):
-    name = ''
-    strength = 0
-    stamina = 0
-    health_point = 0
-    base_damage = 0
+    name = None
+    strength = None
+    stamina = None
+    health_point = None
+    base_damage = None
 
     def __init__(self, name):
         self.name = name
