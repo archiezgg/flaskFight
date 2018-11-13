@@ -1,3 +1,1 @@
-web: flask run
-server:
-  port: 5000
+web: flask run -p PORT
