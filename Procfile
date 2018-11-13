@@ -1,1 +1,1 @@
-web: flask run --port 33507
+web: flask run --port $PORT
