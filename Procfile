@@ -1,1 +1,1 @@
-web: source venv/bin/activate && flask run
+web: flask run
