@@ -9,7 +9,7 @@ jobs:
       - checkout
       - run:
           command: |
-            python3 -m ensurepip
+            sudo python3 -m ensurepip
             pip3 install pytest
             pytest
   deploy:
