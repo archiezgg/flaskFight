@@ -8,10 +8,22 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Install Python dependencies in a venv
           command: |
-            python3 -m ensurepip
-            sudo pip3 install pytest
+            virtualenv venv
+            . venv/bin/activate
+            pip install -r database_jobs/requirements.txt
+  test:
+    docker:
+      - image: circleci/python:3.6.4
+    steps:
+      - checkout
+      - run:
+          name: Runnning tests
+          command: |
+            . venv/bin/activate
             pytest
+
   deploy:
     docker:
       - image: buildpack-deps:trusty
