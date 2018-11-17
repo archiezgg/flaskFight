@@ -9,8 +9,8 @@ jobs:
       - checkout
       - run:
           command: |
-            sudo python3 -m ensurepip
-            pip3 install pytest
+            python3 -m ensurepip
+            sudo pip3 install pytest
             pytest
   deploy:
     docker:
